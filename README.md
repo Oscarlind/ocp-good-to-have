@@ -30,6 +30,7 @@ This page serves as a collection point for useful one-liners and other valuable 
 
 8. [📦 **Pods**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pods)
     - [🏢 Pods per Node](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pods/pods_per_node.md)
+    - [⏰ Pod Scheduling](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pods/pod-scheduling.md)
 
 9. [🔗 **Persistent Volumes & Claims**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv)
     - [➡️ Attach New PVC to PV](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv/attach-new-pvc-to-pv.md)
