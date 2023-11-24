@@ -36,6 +36,15 @@ In this example we are specyfing a few different things. First is the URL to the
 
 This means that only members of these four groups will be able to authenticate to the cluster. This is a good way of limiting access to the cluster itself.
 
+### Limiting authentication using a broader group configuration
+Another way of doing this is to have users that will have access to the cluster be part of a broader group. In this example called **openshift**. 
+```yaml
+      url: ldaps://ldap.example.com:636/dc=mycompany,dc=com?sAMAccountName?sub?(memberOf=CN=openshift,OU=Groups,DC=mycompany,DC=com)
+      mappingMethod: claim
+      name: AD
+      type: LDAP
+```
+As long as the users are part of this specific group they will be able to authenticate with the cluster. When used together with a whitelist for the group sync we can achieve setup that won't require any further changes to the OAuth configuration as every user just needs to be part of this group in addition to any other group they need for RBAC reasons.
 ## The group sync
 In order to pull in groups from our Active Directory or LDAP server we can use the [group-sync operator](https://github.com/redhat-cop/group-sync-operator)
 
