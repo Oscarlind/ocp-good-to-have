@@ -1,6 +1,6 @@
-# One-liners and Other Useful Stuff
+# OpenShift Operations Handbook
 
-This page serves as a collection point for useful one-liners and other valuable content related to the OpenShift Container Platform (OCP). Explore the table of contents below to find specific topics of interest.
+This page serves as a collection point for useful one-liners and other valuable content related to the OpenShift Container Platform (OCP) that I've picked up and eventually added to git. Explore the table of contents below to find specific topics of interest.
 
 # Table of Contents
 
