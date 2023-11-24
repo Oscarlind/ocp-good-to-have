@@ -1,0 +1,22 @@
+spec:
+  identityProviders:
+  - ldap:
+      attributes:
+        email:
+        - mail
+        id:
+        - sAMAccountName
+        name:
+        - displayName
+        preferredUsername:
+        - sAMAccountName
+      bindDN: cn=ldap-service-account,ou=ServiceAccounts,dc=mycompany,dc=com
+      bindPassword:
+        name: ldap-secret
+      ca:
+        name: ldap-ca-config-map
+      insecure: false
+      url: ldaps://ldap.example.com:636/dc=mycompany,dc=com?sAMAccountName?sub?(&(objectClass=user)(|(memberof=CN=ocp-admins,OU=Groups,OU=Departments,DC=mycompany,DC=com)(memberof=CN=dev-team01,OU=Groups,OU=Departments,DC=mycompany,DC=com)(memberof=CN=dev-team02,OU=Groups,OU=Departments,DC=mycompany,DC=com)(memberof=CN=platform-support,OU=Groups,OU=Departments,DC=mycompany,DC=com)))
+      mappingMethod: claim
+      name: AD
+      type: LDAP
