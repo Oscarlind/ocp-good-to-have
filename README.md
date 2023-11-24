@@ -27,6 +27,8 @@ This page serves as a collection point for useful one-liners and other valuable 
     - [📅 Last Modifier](https://github.com/Oscarlind/ocp-good-to-have/tree/main/miscellaneous/last-modifier.md)
     - [🔄 Service to External IP](https://github.com/Oscarlind/ocp-good-to-have/tree/main/miscellaneous/service-to-external-ip.md)
     - [📊 Parsing with jq & yq](https://github.com/Oscarlind/ocp-good-to-have/tree/main/miscellaneous/jq-and-yq-parsing.md)
+    - [🔑 Adding SSH Keys to Core User](https://github.com/Oscarlind/ocp-good-to-have/blob/main/miscellaneous/adding-ssh-keys.md)
+
 
 8. [📦 **Pods**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pods)
     - [🏢 Pods per Node](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pods/pods_per_node.md)
