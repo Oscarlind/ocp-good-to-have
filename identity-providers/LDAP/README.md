@@ -1,5 +1,7 @@
 # Configuration
-When configuring a LDAP/AD identity provider there are a few configuration parameters that are good to understand. I will be going through them below. The full example file can be found under **templates/oauth.yaml**
+When configuring a LDAP/AD identity provider there are a few configuration parameters that are good to understand. I will be going through them below. The full example file can be found under: 
+* **templates/oauth.yaml**
+* **templates/groupSync.yaml**
 
 ## The oauth configuration
 In the Oauth configuration we specify a list of identity providers and how authentication from the cluster to the identity provider is happening but also how user access to the cluster should look like
@@ -33,3 +35,41 @@ In this example we are specyfing a few different things. First is the URL to the
 * **platform-support**
 
 This means that only members of these four groups will be able to authenticate to the cluster. This is a good way of limiting access to the cluster itself.
+
+## The group sync
+In order to pull in groups from our Active Directory or LDAP server we can use the [group-sync operator](https://github.com/redhat-cop/group-sync-operator)
+
+Using the operator we can perform group sync against multiple different identity providers. In this example we will be using it against an Active Directory.
+
+### Querying
+
+```yaml
+rfc2307:
+  groupsQuery:
+    baseDN: OU=Groups,OU=Departments,DC=mycompany,DC=com
+    # The baseDN specifies WHERE in the AD structure we are looking for groups.
+    derefAliases: never
+    filter: (objectClass=groupofnames)
+    scope: sub
+
+# For LDAP/AD User Queries
+  usersQuery:
+    baseDN: DC=mycompany,DC=com
+    # Here in the userQuery, we are selecting the entire AD server.
+    derefAliases: never
+    pageSize: 0
+    scope: sub
+```
+### Whitelisting
+```yaml
+url: ldaps://ldap.example.com:636
+whitelist:
+- CN=ocp-admins
+- CN=dev-team01
+- CN=dev-team02
+- CN=platform-support
+# The whitelist specifies the exact groups that are allowed access to the cluster.
+```
+We also specify the URL for the server, which we are keeping to the base url. Then we are using the **whitelist** field to specify the exact groups that we are pulling into the cluster. As you can see it is matching the groups that we also allow to authenticate with the cluster.
+
+With using both a restrictive setup for the URL in the OAuth configuration, combined with a whitelist approach to the group synchronization, we can set up our cluster in a way that only required users and groups are allowed access to it.
