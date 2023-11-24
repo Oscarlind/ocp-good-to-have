@@ -34,3 +34,45 @@ spec:
     value: reserved
 ...
 ```
+
+Sometimes, often when working with certain operators - like Quay, we are not able to add nodeSelectors and tolerations directly on our deployments. As they are operator owned the operator will simply remove them. What we can do in order to work around that issue, is to set these on the project itself instead. This will trigger an mutating **admissioncontroller** to add it to the running resouce without the operator removing it.
+
+[Read more about it here](https://docs.openshift.com/container-platform/4.14/nodes/scheduling/nodes-scheduler-node-selectors.html#nodes-scheduler-node-selectors-project_nodes-scheduler-node-selectors)
+
+## Project nodeSelector
+This is an example of how we can use it.
+
+We can create a new project using annotations such as this:
+```yaml
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: my-project
+  annotations:
+    openshift.io/node-selector: 'node-role.kubernetes.io/infra='
+    scheduler.alpha.kubernetes.io/defaultTolerations: >-
+      [{"operator": "Exists", "effect": "NoSchedule", "key":
+      "node-role.kubernetes.io/infra"}]
+```
+
+If we are working with already existing projects/namespaces we can instead edit the *namespace* resource and add the annotations:
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    openshift.io/sa.scc.mcs: s0:c3,c2
+    openshift.io/sa.scc.supplemental-groups: 1000010000/10000
+    openshift.io/sa.scc.uid-range: 1000010000/10000
+    openshift.io/node-selector: 'node-role.kubernetes.io/infra='
+    scheduler.alpha.kubernetes.io/defaultTolerations: >-
+      [{"operator": "Exists", "effect": "NoSchedule", "key":
+      "node-role.kubernetes.io/infra"}]
+  name: example-namespace
+```
+This will automatically ensure that any workload deployed in this namespace will be put on infrastructure nodes.
+
+Doing this can be particularly useful when working on a service or management cluster where no application workload are to be running. Instead only supporting components, such as ACM, Quay etc. 
+
+> **NOTE:** It is also possible to configure a cluster wide selector
