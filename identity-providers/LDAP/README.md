@@ -55,7 +55,7 @@ rfc2307:
 # For LDAP/AD User Queries
   usersQuery:
     baseDN: DC=mycompany,DC=com
-    # Here in the userQuery, we are selecting the entire AD server.
+    # Here in the userQuery, we are selecting the root of the AD domain.
     derefAliases: never
     pageSize: 0
     scope: sub
