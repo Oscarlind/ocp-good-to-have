@@ -33,4 +33,5 @@ This page serves as a collection point for useful one-liners and other valuable 
 
 9. [🔗 **Persistent Volumes & Claims**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv)
     - [➡️ Attach New PVC to PV](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv/attach-new-pvc-to-pv.md)
-    - [**Info** General Information](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv/general-info.md)
+    - [💡 General Information](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv/general-info.md)
+
