@@ -6,6 +6,7 @@ This page serves as a collection point for useful one-liners and other valuable 
 
 1. [🚀 **API**](https://github.com/Oscarlind/ocp-good-to-have/blob/main/api)
     - [🔄 Curl](https://github.com/Oscarlind/ocp-good-to-have/blob/main/api/curl.md)
+    - [🔐 Creating a Recovery Kubeconfig](https://github.com/Oscarlind/ocp-good-to-have/blob/main/api/recovery-kubeconfig.md)
     
 2. [🌐 **Clusterversion**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/clusterversion)
     - [📘 README](https://github.com/Oscarlind/ocp-good-to-have/tree/main/clusterversion/README.md)
