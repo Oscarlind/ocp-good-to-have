@@ -24,18 +24,22 @@ This page serves as a collection point for useful one-liners and other valuable 
 6. [🌌 **Images**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/images)
     - [📸 Image Querying](https://github.com/Oscarlind/ocp-good-to-have/tree/main/images/query_cluster_images.md)
 
-7. [🔀 **Miscellaneous**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/miscellaneous)
+7. [🔀 **Machines**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/machines)
+    - [💾 Wiping Node Disks](https://github.com/Oscarlind/ocp-good-to-have/blob/main/machines/wipe-disk.md)
+
+8. [🔀 **Miscellaneous**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/miscellaneous)
     - [📅 Last Modifier](https://github.com/Oscarlind/ocp-good-to-have/tree/main/miscellaneous/last-modifier.md)
     - [🔄 Service to External IP](https://github.com/Oscarlind/ocp-good-to-have/tree/main/miscellaneous/service-to-external-ip.md)
     - [📊 Parsing with jq & yq](https://github.com/Oscarlind/ocp-good-to-have/tree/main/miscellaneous/jq-and-yq-parsing.md)
     - [🔑 Adding SSH Keys to Core User](https://github.com/Oscarlind/ocp-good-to-have/blob/main/miscellaneous/adding-ssh-keys.md)
 
 
-8. [📦 **Pods**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pods)
+9. [📦 **Pods**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pods)
     - [🏢 Pods per Node](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pods/pods_per_node.md)
     - [⏰ Pod Scheduling](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pods/pod-scheduling.md)
 
-9. [🔗 **Persistent Volumes & Claims**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv)
+10. [🔗 **Persistent Volumes & Claims**](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv)
     - [➡️ Attach New PVC to PV](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv/attach-new-pvc-to-pv.md)
     - [💡 General Information](https://github.com/Oscarlind/ocp-good-to-have/tree/main/pvc-and-pv/general-info.md)
+
 
