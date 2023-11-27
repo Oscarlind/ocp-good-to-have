@@ -75,4 +75,22 @@ This will automatically ensure that any workload deployed in this namespace will
 
 Doing this can be particularly useful when working on a service or management cluster where no application workload are to be running. Instead only supporting components, such as ACM, Quay etc. 
 
-> **NOTE:** It is also possible to configure a cluster wide selector
+> **NOTE:** It is also possible to configure a cluster wide selector, see below
+
+## Configuring the default scheduler
+In some cases it can be frustrating to work with a lot of taints and tolerations, as it means that for every component that is planned for a specific node or group of nodes require tolerations matching the taints.
+
+### Example Scheduler Configuration
+```yaml
+apiVersion: config.openshift.io/v1
+kind: Scheduler
+metadata:
+  name: cluster
+spec:
+  defaultNodeSelector: node-role.kubernetes.io/worker=
+  mastersSchedulable: false
+  policy:
+    name: ""
+status: {}
+```
+A Scheduler configuration such as this one will have the *Scheduler* automatically place workload on the worker nodes unless the workload has its own **nodeSelectors**. This can be convenient when working with infrastructure components and wanting to avoid using **taints & tolerations**
