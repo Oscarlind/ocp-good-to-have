@@ -3,7 +3,7 @@ Examples how to query etcd for resources.
 ## Examples
 * Query for specific resource in target namespace:
 
-  `etcdctl  get / --prefix --keys-only | grep RESOURCE/NAMESPACE`
+  `etcdctl  get / --prefix --keys-only | grep NAMESPACE/RESOURCE`
 
 * Get list of resources and their amounts in the cluster:
 
